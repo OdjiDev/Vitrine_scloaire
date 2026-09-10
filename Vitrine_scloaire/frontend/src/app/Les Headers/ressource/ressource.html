@@ -1,0 +1,57 @@
+<section class="actualites-section">
+
+  <div class="section-header">
+    <span>COLLÈGE ROYAL</span>
+
+    <h2>À la Une</h2>
+
+    <p>
+      Découvrez les dernières actualités et nouveautés de notre établissement
+    </p>
+  </div>
+
+
+  <div class="actualites-list">
+
+    <div
+      class="actualite-card"
+      *ngFor="let item of list"
+    >
+
+      <!-- IMAGE -->
+      <div class="card-image-wrapper">
+
+        <img
+          [src]="'http://localhost:8080/images/' + item.image"
+          alt="Image d'actualité"
+        >
+
+        <div class="image-overlay">
+          ACTUALITÉ
+        </div>
+
+      </div>
+
+
+      <!-- CONTENU -->
+      <div class="card-content">
+
+        <span class="category">
+          Actualité du Collège Royal
+        </span>
+
+        <h3>
+          {{ item.titre }}
+        </h3>
+
+        <p class="card-text">
+          {{ item.contenue }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
