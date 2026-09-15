@@ -16,16 +16,7 @@ export class Bienvenue {
  ngOnInit(){
  this.charger();
  }
- supprimer(id:number){
-  this.actualiteService.supprimer(id).subscribe({
-    next:(reponse)=>{
-      this.charger();
-    },
-    error:(err)=>{
-      console.log(err);
-    }
-  })
- }
+ 
  charger(){
   this.actualiteService.findAll().subscribe({
     next:(reponse)=>{
@@ -36,5 +27,15 @@ export class Bienvenue {
     }
   })
  }
- 
+ supprimer(id:number){
+  this.actualiteService.supprimer(id).subscribe({
+    next:(data)=>{
+      alert("actualite Supprimer");
+     this.charger();
+    },
+    error:(err)=>{
+      console.log(err);
+    }
+  })
+ }
 }

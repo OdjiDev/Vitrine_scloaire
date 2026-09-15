@@ -8,7 +8,7 @@ import { Actuality } from '../Entity/actuality';
 })
 export class ActualiteService {
   constructor(private http:HttpClient){}
-  url='Ecole/Actualite'
+  url='http://localhost:8080/Ecole/Actualite'
   save(formData:FormData):Observable<Actuality>{
   return this.http.post<Actuality>(this.url+'/save',formData)
   }
